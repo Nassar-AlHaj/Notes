@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 class EditNote extends StatefulWidget {
-  final Map<String, String> note; // Expecting a Map<String, String>
+  final Map<String, String> note; 
   final int index;
 
   const EditNote({
@@ -44,7 +44,7 @@ class _EditNoteState extends State<EditNote> {
     final notesString = prefs.getString('notes');
     final List<dynamic> decodedNotes = notesString != null ? json.decode(notesString) : [];
 
-    // Convert each dynamic item to a Map<String, String>
+    
     final notes = decodedNotes.map((note) {
       return {
         'title': note['title'] as String,
@@ -52,7 +52,7 @@ class _EditNoteState extends State<EditNote> {
       };
     }).toList();
 
-    // Update the specific note in the list
+    
     notes[widget.index] = updatedNote;
 
     // Save the updated list back to SharedPreferences
@@ -70,7 +70,7 @@ class _EditNoteState extends State<EditNote> {
     final notesString = prefs.getString('notes');
     final List<dynamic> decodedNotes = notesString != null ? json.decode(notesString) : [];
 
-    // Convert each dynamic item to a Map<String, String>
+   
     final notes = decodedNotes.map((note) {
       return {
         'title': note['title'] as String,
@@ -100,7 +100,7 @@ class _EditNoteState extends State<EditNote> {
           IconButton(
             icon: const Icon(Icons.delete),
             onPressed: () {
-              _deleteNote(); // Call delete function
+              _deleteNote();  
             },
           ),
         ],

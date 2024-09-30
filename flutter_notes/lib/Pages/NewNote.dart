@@ -28,13 +28,13 @@ class _NewNoteState extends State<NewNote> {
     final notesString = prefs.getString('notes');
     final List<dynamic> decodedNotes = notesString != null ? json.decode(notesString) : [];
 
-    // Add new note to the list
+   
     decodedNotes.add(newNote);
 
-    // Save the updated list back to SharedPreferences
+  
     await prefs.setString('notes', json.encode(decodedNotes));
 
-    Navigator.pop(context, newNote); // Return the new note
+    Navigator.pop(context, newNote); 
   }
 
   @override

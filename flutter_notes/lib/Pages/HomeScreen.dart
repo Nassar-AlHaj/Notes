@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               )
             : MasonryGridView.count(
-                crossAxisCount: 2, // Number of columns
+                crossAxisCount: 2, 
                 mainAxisSpacing: 8.0,
                 crossAxisSpacing: 8.0,
                 itemCount: notes.length,
